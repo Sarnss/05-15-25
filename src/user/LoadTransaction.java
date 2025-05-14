@@ -58,7 +58,7 @@ private void approveTransaction() {
                 // Log event after successful update
                 logEvent(userId, user, "Delivered Load ID: " + loadIdValue);
 
-                this.dispose();  // Close the form
+                // Close the form
             } else {
                 JOptionPane.showMessageDialog(this, "Error delivering the load.");
             }
@@ -123,6 +123,7 @@ public void logEvent(int userId, String username, String description) {
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -184,6 +185,15 @@ public void logEvent(int userId, String username, String description) {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 220, 70));
 
+        jButton6.setBackground(new java.awt.Color(0, 0, 204));
+        jButton6.setText("BACK");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 80, 30));
+
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 550, 480));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 550));
@@ -197,6 +207,12 @@ public void logEvent(int userId, String username, String description) {
            
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+  userDashboard ru = new userDashboard();
+        ru.setVisible(true);
+        this.dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,6 +254,7 @@ public void logEvent(int userId, String username, String description) {
     public javax.swing.JTextField cg;
     public javax.swing.JTextField dt;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -201,30 +201,39 @@ private void loadAssignedLoads() {
     }//GEN-LAST:event_formWindowActivated
 
     private void selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectActionPerformed
-   int rowIndex = loadtbl.getSelectedRow();
-    
-    // Check if a row is selected
-    if (rowIndex == -1) {
-        JOptionPane.showMessageDialog(this, "Please select a load to proceed.");
-        return; // Exit if no row is selected
-    }
-    
-    // Retrieve the load details from the selected row
-    String loadId = loadtbl.getModel().getValueAt(rowIndex, 0).toString();
-    String cargo = loadtbl.getModel().getValueAt(rowIndex, 1).toString();
-    String destination = loadtbl.getModel().getValueAt(rowIndex, 2).toString();
-    String weight = loadtbl.getModel().getValueAt(rowIndex, 3).toString();
-    
-    // Create the LoadTransaction form
-    LoadTransaction loadTransaction = new LoadTransaction();
-    
-    // Pass the load details to the LoadTransaction form
-    loadTransaction.setLoadDetails(loadId, cargo, destination, weight); 
-    
-    // Make LoadTransaction visible and dispose of the current window
-    loadTransaction.setVisible(true);
-    this.dispose();
-    // Pass the loadId to the LoadTransaction form
+  int rowIndex = loadtbl.getSelectedRow();
+
+// Check if a row is selected
+if (rowIndex == -1) {
+    JOptionPane.showMessageDialog(this, "Please select a load to proceed.");
+    return; // Exit if no row is selected
+}
+
+// Retrieve the status of the selected row
+String status = loadtbl.getModel().getValueAt(rowIndex, 4).toString(); // Assuming column index 4 is 'Status'
+
+// Check if the status is "Delivered"
+if ("Delivered".equalsIgnoreCase(status)) {
+    JOptionPane.showMessageDialog(this, "You cannot select a delivered load. Please select an active load.");
+    return; // Exit if load is delivered
+}
+
+// Retrieve the load details from the selected row
+String loadId = loadtbl.getModel().getValueAt(rowIndex, 0).toString();
+String cargo = loadtbl.getModel().getValueAt(rowIndex, 1).toString();
+String destination = loadtbl.getModel().getValueAt(rowIndex, 2).toString();
+String weight = loadtbl.getModel().getValueAt(rowIndex, 3).toString();
+
+// Create the LoadTransaction form
+LoadTransaction loadTransaction = new LoadTransaction();
+
+// Pass the load details to the LoadTransaction form
+loadTransaction.setLoadDetails(loadId, cargo, destination, weight); 
+
+// Make LoadTransaction visible and dispose of the current window
+loadTransaction.setVisible(true);
+this.dispose();
+
             
     }//GEN-LAST:event_selectActionPerformed
 
