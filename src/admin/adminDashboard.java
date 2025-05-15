@@ -254,7 +254,7 @@ private void loadUserProfile() {
         jPanel3.add(acc_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 200, 30));
 
         jPanel10.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel10.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jPanel10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel10.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -299,7 +299,7 @@ private void loadUserProfile() {
         jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 200, 70));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -327,11 +327,13 @@ private void loadUserProfile() {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         u_image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel5.add(u_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 130));
+        u_image.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
+        jPanel5.add(u_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 130));
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 200, 130));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 180, 130));
 
         jPanel7.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel7MouseClicked(evt);
@@ -368,7 +370,7 @@ private void loadUserProfile() {
         ));
         jScrollPane1.setViewportView(logstbl);
 
-        jPanel12.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 750, 540));
+        jPanel12.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 750, 540));
 
         getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 770, 580));
 

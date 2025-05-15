@@ -257,8 +257,10 @@ private void deleteLoad() {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 153)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        add.setBackground(new java.awt.Color(0, 0, 204));
         add.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -268,6 +270,7 @@ private void deleteLoad() {
         });
         jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 160, 40));
 
+        update.setBackground(new java.awt.Color(0, 0, 204));
         update.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         update.setText("UPDATE");
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -282,6 +285,7 @@ private void deleteLoad() {
         });
         jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 160, 40));
 
+        register1.setBackground(new java.awt.Color(0, 0, 204));
         register1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         register1.setText("DELETE");
         register1.addActionListener(new java.awt.event.ActionListener() {
@@ -291,6 +295,7 @@ private void deleteLoad() {
         });
         jPanel1.add(register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 160, 40));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setText("BACK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,6 +304,7 @@ private void deleteLoad() {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, 90, -1));
 
+        load_tbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 153)));
         load_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -314,6 +320,7 @@ private void deleteLoad() {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 760, 370));
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("REFRESH");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -323,6 +330,7 @@ private void deleteLoad() {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 180, 40));
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -334,6 +342,7 @@ private void deleteLoad() {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 480));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed

@@ -287,6 +287,7 @@ public class accountDetails extends javax.swing.JFrame {
         acc_fname.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(0, 0, 153)));
         jPanel12.add(acc_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 30));
 
+        jPanel9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel9MouseClicked(evt);
@@ -300,6 +301,7 @@ public class accountDetails extends javax.swing.JFrame {
 
         jPanel12.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 170));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setText("Select");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,7 +310,7 @@ public class accountDetails extends javax.swing.JFrame {
         });
         jPanel12.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 110, -1));
 
-        update.setBackground(new java.awt.Color(27, 55, 77));
+        update.setBackground(new java.awt.Color(0, 0, 204));
         update.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         update.setText("SAVE ");
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -323,7 +325,7 @@ public class accountDetails extends javax.swing.JFrame {
         });
         jPanel12.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 90, 30));
 
-        cancel.setBackground(new java.awt.Color(0, 0, 0));
+        cancel.setBackground(new java.awt.Color(0, 0, 204));
         cancel.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         cancel.setForeground(new java.awt.Color(27, 57, 77));
         cancel.setText("CANCEL");
@@ -352,6 +354,7 @@ public class accountDetails extends javax.swing.JFrame {
         cp.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         cp.setForeground(new java.awt.Color(255, 255, 255));
         cp.setText("   CHANGE PASS");
+        cp.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         cp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cpMouseClicked(evt);

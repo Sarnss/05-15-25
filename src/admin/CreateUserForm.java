@@ -300,6 +300,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel7.add(rf);
         rf.setBounds(10, 0, 90, 30);
 
+        pw.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         pw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pwActionPerformed(evt);
@@ -330,6 +331,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         cc.setBounds(10, 0, 90, 30);
 
         us.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        us.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel6.add(us);
         us.setBounds(220, 0, 190, 30);
 
@@ -355,6 +357,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         cl.setBounds(10, 0, 90, 30);
 
         mail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        mail.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel5.add(mail);
         mail.setBounds(220, 0, 190, 30);
 
@@ -370,6 +373,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         jLabel3.setBounds(140, 0, 63, 30);
 
         ln.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ln.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel4.add(ln);
         ln.setBounds(220, 0, 190, 30);
 
@@ -405,6 +409,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         del.setBounds(10, 0, 90, 30);
 
         fn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         fn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fnActionPerformed(evt);
@@ -476,7 +481,9 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel2.add(add);
         add.setBounds(10, 0, 90, 30);
 
+        uid.setBackground(new java.awt.Color(240, 240, 240));
         uid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        uid.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         uid.setEnabled(false);
         jPanel2.add(uid);
         uid.setBounds(220, 0, 190, 30);
@@ -506,6 +513,9 @@ public class CreateUserForm extends javax.swing.JFrame {
 
         sq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is the name of your first pet?", "What is the lastname of your Mother?", "What is your favorite food?", "What is your favorite Color?", " " }));
         jPanel10.add(sq, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 320, -1));
+
+        ans.setEditable(false);
+        ans.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel10.add(ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 320, 30));
 
         select.setBackground(new java.awt.Color(0, 51, 102));
@@ -916,7 +926,7 @@ public class CreateUserForm extends javax.swing.JFrame {
     public javax.swing.JPasswordField pw;
     public javax.swing.JButton remove;
     private javax.swing.JButton rf;
-    private javax.swing.JButton select;
+    public javax.swing.JButton select;
     private javax.swing.JComboBox<String> sq;
     public javax.swing.JComboBox<String> stat;
     private javax.swing.JLabel u_image;

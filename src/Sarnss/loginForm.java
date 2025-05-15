@@ -234,7 +234,7 @@ public class loginForm extends javax.swing.JFrame {
         });
         jPanel3.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 300, 30));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jButton1.setText("LOGIN");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -288,7 +288,7 @@ public class loginForm extends javax.swing.JFrame {
         jLabel1.setText("LOGIN FORM");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 390, 60));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         jButton2.setText("CANCEL");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {

@@ -136,7 +136,7 @@ public class regForm extends javax.swing.JFrame {
         jLabel3.setText("First Name");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 90, 10));
 
-        jRegister.setBackground(new java.awt.Color(204, 204, 255));
+        jRegister.setBackground(new java.awt.Color(0, 0, 204));
         jRegister.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jRegister.setText("REGISTER");
         jRegister.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,7 +194,7 @@ public class regForm extends javax.swing.JFrame {
         jLabel10.setText("Password");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 60, 10));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jButton1.setText("CANCEL");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {

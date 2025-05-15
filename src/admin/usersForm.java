@@ -312,6 +312,7 @@ public class usersForm extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 60, 80));
 
@@ -335,12 +336,14 @@ public class usersForm extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 400));
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("USERS");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 50, 30));
 
+        add.setBackground(new java.awt.Color(0, 0, 204));
         add.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -350,6 +353,7 @@ public class usersForm extends javax.swing.JFrame {
         });
         jPanel2.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 40));
 
+        update.setBackground(new java.awt.Color(0, 0, 204));
         update.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         update.setText("UPDATE");
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -364,6 +368,7 @@ public class usersForm extends javax.swing.JFrame {
         });
         jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 140, 40));
 
+        register1.setBackground(new java.awt.Color(0, 0, 204));
         register1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         register1.setText("DELETE");
         register1.addActionListener(new java.awt.event.ActionListener() {
@@ -373,6 +378,8 @@ public class usersForm extends javax.swing.JFrame {
         });
         jPanel2.add(register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 130, 40));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("BACK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

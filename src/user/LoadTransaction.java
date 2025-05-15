@@ -151,21 +151,31 @@ public void logEvent(int userId, String username, String description) {
         jLabel5.setText("Weight         :");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 120, 30));
 
+        loadID.setBackground(new java.awt.Color(240, 240, 240));
         loadID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        loadID.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         loadID.setEnabled(false);
         jPanel1.add(loadID, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 160, 30));
+
+        cg.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel1.add(cg, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 30));
+
+        dt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel1.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 160, 30));
+
+        wt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel1.add(wt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 160, 30));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setText("Approve");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 80, 30));
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -179,6 +189,7 @@ public void logEvent(int userId, String username, String description) {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 550));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
