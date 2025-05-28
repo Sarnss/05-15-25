@@ -120,6 +120,10 @@ public class NewLoad extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        area = new javax.swing.JTextArea();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,7 +204,7 @@ public class NewLoad extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 100, 30));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 100, 30));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 204));
         jButton4.setText("CANCEL");
@@ -222,16 +226,44 @@ public class NewLoad extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 180, 70));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 610, 380));
+        jButton5.setBackground(new java.awt.Color(0, 0, 204));
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton5.setText("PRINT RECEIPT");
+        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, 110, 40));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 430));
+        area.setColumns(20);
+        area.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        area.setRows(5);
+        jScrollPane2.setViewportView(area);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 240, 230));
+
+        jButton6.setBackground(new java.awt.Color(51, 51, 255));
+        jButton6.setText("RESET");
+        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, 90, 40));
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 890, 380));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 430));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    dbConnector dbc = new dbConnector();
+   dbConnector dbc = new dbConnector();
 Session sess = Session.getInstance();
 String user = sess.getUsername();
 int userId = sess.getUid(); // Logged-in admin
@@ -245,7 +277,7 @@ String weight = wt.getText().trim();
 if (cargo.isEmpty() || destination.isEmpty() || weight.isEmpty()) {
     JOptionPane.showMessageDialog(null, "Please fill all fields.");
     return;
-} else if (!weight.matches("^[0-9]+$")) { 
+} else if (!weight.matches("^[0-9]+$")) {
     JOptionPane.showMessageDialog(null, "Enter a valid weight.");
     return;
 }
@@ -253,7 +285,7 @@ if (cargo.isEmpty() || destination.isEmpty() || weight.isEmpty()) {
 try (Connection conn = dbc.getConnection()) {
     // Insert the new load
     String insertLoadQuery = "INSERT INTO tbl_loads (cargo, destination, weight, status) VALUES (?, ?, ?, ?)";
-    
+
     try (PreparedStatement pst = conn.prepareStatement(insertLoadQuery)) {
         pst.setString(1, cargo);
         pst.setString(2, destination);
@@ -263,9 +295,9 @@ try (Connection conn = dbc.getConnection()) {
         int rowsInserted = pst.executeUpdate();
 
         if (rowsInserted > 0) {
-            // Insert the log only if load insertion was successful
+            // Insert the log
             String logQuery = "INSERT INTO tbl_log (u_id, u_username, u_type, log_status, log_description) VALUES (?, ?, ?, ?, ?)";
-            
+
             try (PreparedStatement logPst = conn.prepareStatement(logQuery)) {
                 logPst.setInt(1, userId);
                 logPst.setString(2, user);
@@ -275,11 +307,26 @@ try (Connection conn = dbc.getConnection()) {
                 logPst.executeUpdate();
             }
 
-            // Only ONE success message after everything
+            // Print receipt
+            area.setText(""); // Clear previous content
+            area.append("*********************************************\n");
+            area.append("*              Load Receipt                 *\n");
+            area.append("*********************************************\n\n");
+            area.append("Date: " + new Date().toString() + "\n\n");
+            area.append("Admin Username: " + user + "\n");
+            area.append("Cargo: " + cargo + "\n");
+            area.append("Destination: " + destination + "\n");
+            area.append("Weight: " + weight + " kg\n");
+            area.append("Status: Pending\n");
+            area.append("\n*********************************************\n");
+            area.append("*        Thank you for using the system!    *\n");
+            area.append("*********************************************\n");
+
+            // Show success message after everything
             JOptionPane.showMessageDialog(null, "Admin Added a New Load Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
 
             new LoadForm().setVisible(true);
-            this.dispose(); 
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Failed to Add Load.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -369,6 +416,19 @@ try (Connection conn = dbc.getConnection()) {
         // TODO add your handling code here:
     }//GEN-LAST:event_wtActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try{
+            area.print();
+        }catch(Exception e){
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // area.setText("");
+        //username.setText("");
+        //loanamount.setText("");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -406,12 +466,15 @@ try (Connection conn = dbc.getConnection()) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextArea area;
     public javax.swing.JTextField cg;
     public javax.swing.JTextField dt;
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
     public javax.swing.JButton jButton3;
     public javax.swing.JButton jButton4;
+    public javax.swing.JButton jButton5;
+    public javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -421,6 +484,7 @@ try (Connection conn = dbc.getConnection()) {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextField loadID;
     public javax.swing.JTextField wt;
     // End of variables declaration//GEN-END:variables
